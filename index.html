@@ -3,103 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndiskaKällaren</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>IndiskaKallaren</title>
+    <!-- Script for the slideshow -->
+    <script defer src="script.js"></script>
 </head>
-<body>
-    <header>
-        <!-- Nav Bar -->
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js"></script>
-    <title>IndiskaKallaren</title>
-</head>
-    <header>
-        <!-- Nav Bar -->
-        <nav class="bg-red-900">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div class="relative flex h-16 items-center">
+<body class="bg-gray-100">
+
+    <!-- Header with Navigation Bar -->
+    <header class="bg-red-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
                 <!-- Logo Section -->
                 <div class="flex-shrink-0">
-                  <img class="h-16 w-auto" src="Images/Indiska Kallaren logo.png" alt="Restaurant Logo">
+                    <img class="h-16 w-auto" src="Images/Indiska Kallaren logo.png" alt="Restaurant Logo">
                 </div>
 
-                <!-- Centered Nav Links -->
-                <div class="flex-1 flex items-center justify-center">
-                  <div class="hidden sm:block">
+                <!-- Centered Navigation Links -->
+                <div class="hidden sm:flex flex-1 items-center justify-center">
                     <div class="flex space-x-4">
-                      <!-- Current: "bg-red-800 text-white", Default: "text-red-300 hover:bg-red-700 hover:text-white" -->
-                      <a href="#" class="rounded-md bg-red-800 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
-                      <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-red-300 hover:bg-red-700 hover:text-white">Menu</a>
-                      <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-red-300 hover:bg-red-700 hover:text-white">Boka Bord</a>
-                      <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-red-300 hover:bg-red-700 hover:text-white">Take Away</a>
+                        <a href="#" class="rounded-md bg-red-800 px-3 py-2 text-sm font-medium text-white">Home</a>
+                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-red-300 hover:bg-red-700 hover:text-white">Menu</a>
+                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-red-300 hover:bg-red-700 hover:text-white">Boka Bord</a>
+                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-red-300 hover:bg-red-700 hover:text-white">Take Away</a>
                     </div>
-                  </div>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:hidden">
-                  <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                    <span class="sr-only">Open main menu</span>
-                    <!-- Icon when menu is closed. -->
-                    <svg id="icon-menu" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                    <!-- Icon when menu is open. -->
-                    <svg id="icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
+                <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon when menu is closed -->
+                        <svg id="icon-menu" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <!-- Icon when menu is open -->
+                        <svg id="icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
-              </div>
             </div>
-          
-            <!-- Mobile menu -->
-            <div class="sm:hidden menu-closed" id="mobile-menu">
-              <div class="space-y-1 px-2 pb-3 pt-2">
-                <a href="#" class="block rounded-md bg-red-800 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="sm:hidden hidden menu-closed" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2">
+                <a href="#" class="block rounded-md bg-red-800 px-3 py-2 text-base font-medium text-white">Home</a>
                 <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-red-300 hover:bg-red-700 hover:text-white">Menu</a>
                 <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-red-300 hover:bg-red-700 hover:text-white">Boka Bord</a>
                 <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-red-300 hover:bg-red-700 hover:text-white">Take Away</a>
-              </div>
             </div>
-          </nav>
-          
+        </div>
     </header>
 
-    <!-- JavaScript Code -->
-    <script>
-      // JavaScript for toggling the mobile menu
-      document.getElementById('mobile-menu-button').onclick = function() {
-        var menu = document.getElementById('mobile-menu');
-        var iconMenu = document.getElementById('icon-menu');
-        var iconClose = document.getElementById('icon-close');
-        
-        // Toggle the menu visibility
-        if (menu.classList.contains('menu-closed')) {
-          menu.classList.remove('menu-closed');
-          menu.classList.add('menu-open');
-          iconMenu.classList.add('hidden');
-          iconClose.classList.remove('hidden');
-        } else {
-          menu.classList.remove('menu-open');
-          menu.classList.add('menu-closed');
-          iconMenu.classList.remove('hidden');
-          iconClose.classList.add('hidden');
-        }
-      };
-    </script>
-</body>
-</html>
+    <!-- Photo Slideshow with Centered Text -->
+    <section class="relative max-w-4xl mx-auto my-10 overflow-hidden rounded-lg shadow-lg">
+        <!-- Slideshow Text Overlay -->
+        <div class="absolute inset-0 flex items-center justify-center">
+            <a href="#" class="text-white text-4xl font-bold bg-black bg-opacity-50 px-4 py-2 rounded">
+                <img class="h-auto w-auto" src="Images/Indiska Kallaren logo 2.png" alt="">
+            </a>
+        </div>
 
-    </header>
-</body>
-</html>
+        <!-- Slide Images -->
+        <div class="slide fade">
+            <img src="Images/Image_1.jpg" alt="Photo 1" class="w-full h-auto object-cover">
+        </div>
+        <div class="slide fade hidden">
+            <img src="Images/Image_2.jpg" alt="Photo 2" class="w-full h-auto object-cover">
+        </div>
+        <div class="slide fade hidden">
+            <img src="Images/Image_3.jpg" alt="Photo 3" class="w-full h-auto object-cover">
+        </div>
 
-    </header>
+        <!-- Next and Previous Buttons -->
+        <a class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white text-xl cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white text-xl cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
+    </section>
+
 </body>
 </html>
